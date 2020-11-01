@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>20/11 Ngày Nhà Giáo Việt Nam</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    	body
+    	{
+    		background-color:#FFFFE0;
+    		margin:  auto;
+    		padding:  auto;
+        }
+        h1{
+        
+            -webkit-border-radius: 10px;        
+            border-radius: 10px;           
+            border: none;           
+            color: #ffff;         
+            cursor: pointer;        
+            font-family: Brush Script MT;          
+            font-size: 45px;
+            padding: 5px 10px;
+            text-align: center;                 
+        }        
+        @-webkit-keyframes glowing {
+            0% { background-color: #004A7F; -webkit-box-shadow: 0 0 6px #004A7F; }
+            50% { background-color: #0094FF; -webkit-box-shadow: 0 0 15px #0094FF; }
+            100% { background-color: #004A7F; -webkit-box-shadow: 0 0 03px #004A7F; }
+        }
+         
+        @-moz-keyframes glowing {
+            0% { background-color: #004A7F; -moz-box-shadow: 0 0 3px #004A7F; }
+            50% { background-color: #0094FF; -moz-box-shadow: 0 0 10px #0094FF; }
+            100% { background-color: #004A7F; -moz-box-shadow: 0 0 3px #004A7F; }
+        }
+         
+        @-o-keyframes glowing {
+            0% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+            50% { background-color: #0094FF; box-shadow: 0 0 10px #0094FF; }
+            100% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+        }
+         
+        @keyframes glowing {
+            0% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+            50% { background-color: #0094FF; box-shadow: 0 0 10px #0094FF; }
+            100% { background-color: #004A7F; box-shadow: 0 0 3px #004A7F; }
+        }
+         
+        h1{
+            -webkit-animation: glowing 1500ms infinite;
+            -moz-animation: glowing 1500ms infinite;
+            -o-animation: glowing 1500ms infinite;
+            animation: glowing 1500ms infinite;
+        }
+    	.class_1
+    	{
+            /*perspective xác định khoảng cách từ mặt phẳng z=0 cho đến người dùng, việc này nhằm tạo ra một phối cảnh xa-gần cho những phần tử muốn hiển thị dưới dạng 3D*/
+    		width: 400px;
+    		height: 450px;
+    		position: absolute;
+    		background-color: white;
+    		/*chỉnh vị trí phần tử */
+    		top: 50%;
+    		left: 50%;
+    		transform: translate(-50%,-50%) perspective(2000px);
+            /*chuyển sang dạng 3d*/
+    		transform-style: preserve-3d;
+            /*tăng độ bóng với màu là màu xám*/
+    		box-shadow: inset 300px 0px 50px  gray,0px 20px 100px gray;
+    		transition: 1s;
+    	}
+    	.class_1:hover {
+     		transform: translate(-50%,-50%) perspective(2000px) rotate(-10deg);
+            /*chỉnh độ bóng  */
+    		box-shadow: inset 20px 0px 50px  gray, 0px 10px 100px gray;
+    	}
+    	.class_1::before
+    	{
+    		content: "";
+    		position: absolute;
+    		top:-10px;
+    		left: 0px;
+    		width: 100%;
+    		height: 10px;
+    		background-color:white;
+    		transform-origin: bottom;
+    		transform: skewX(-50deg);
+    	}
+    	.class_1::after
+    	{
+    		content: "";
+    		position: absolute;
+    		top: 0px;
+    		right: -10px;
+    		height: 100%;
+    		width: 10px;
+    		background-color: black;
+    		transform-origin: left;
+    		transform: skewY(-50deg);
+    		transition: 1s;
+
+    	}
+    	.class_1::after
+    	{
+    		background-color: white;
+    	}
+    	.class_1 .img_1
+    	{
+    		width: 400px;
+    		height: 450px;
+    		position: relative;
+    		transform-origin: left;
+    		transition: 1s;
+            z-index: 1; 
+    	}
+        .class_1:hover .img_1
+        {
+            transform: rotateY(-140deg);   
+            opacity: .8;
+            z-index: -1;
+        }
+    	.img_1 img
+    	{
+    		width: 100%;
+    		height: 100%
+    	}
+        .class_1 .img_2
+        {
+            width: 400px;
+            height: 230px;
+            position: absolute;
+            top:0;
+            left:0; 
+            padding: 10px;
+            text-align: center;
+            transform-origin: left;
+            box-shadow: inset 20px 0px 50px  gray, 0px 10px 100px gray;       
+            transition: 1s;
+        }
+        .img_2 img
+        {
+            width: 100%;
+            height: 100%;
+        }
+        .class_1 .img_2:hover:active
+        {
+/*            gọi hover để khi click hay rê chuột vào thì sẽ hiện ra
+*/            transform: rotateY(-130deg);
+        }
+        .img_3 img
+        {
+            width: 100%;
+            height: 100%
+        }
+        .class_1 .img_3
+        {
+            width: 400px;
+            height: 450px;
+            position: absolute;
+            top:0;
+            left:0; 
+            padding: 10px;
+            text-align: center;
+            transform-origin: left;
+            box-shadow:    inset 20px 0px 50px  gray, 0px 10px 100px gray;       
+            transition: 1s;
+        }
+        .class_1 .img_3:hover:active
+        {
+            transform: rotateY(-130deg);
+        }
+
+    </style>
+</head>
+<body>
+    <h1> CHÚC MỪNG NGÀY NHÀ GIÁO VIỆT NAM 20/11</h1>
+    <br>
+    <br>
+	<div class="class_1">
+		<div class="img_1">
+			<img src="Những điều thầy dạy còn hơn nhiều những kiến thức trong sách vở. Cảm ơn thầy vì tất cả!.png">
+		</div>
+        <div class="img_2">
+            <img src="vietnam.jpg">
+            <div></div>
+            Gửi Thầy và Cô ! người đã cho em những kiến thức trong sách mà còn là người đã cho em những kiến thức ngoài đời sống giúp chúng em dần hoàn thiện bản thân mình, đối với thầy và cô có thể em không  phải là học trò xuất sắc nhất nhưng thầy và cô là người em yêu quí và kính trọng, em kính chúc thầy và cô có một ngày nhà giáo Việt Nam 20/11 một ngày thật sự hạnh phúc và cười thật tươi và nhận thật nhiều lời chúc mừng từ mọi sinh viên học sinh !!!!!! 
+        </div>
+         <div class="img_3">
+            <img src="Chúc mừng Ngày Nhà giáo!.jpg">
+        </div>
+	</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <footer
+        style="bottom: 20px; right: 0; 
+        display: flex; justify-content: flex-end;
+        width: 100%; align-items: center;">
+        <div style="text-align: right;
+        line-height: 1.25; font-weight: bold;
+        font-size: 18px">
+            <span id="icon-name" style="display: block;">[Nguyễn Trung Trực]</span>
+            <span id="icon-1" style="display: block;">[51800506]</span>
+        </div>
+        <img style="width: 120px;
+        height: auto;" src="https://iconclub.github.io/assets/iconLogo.png" alt="ICON">
+    </footer>
+</body>
+</html>
